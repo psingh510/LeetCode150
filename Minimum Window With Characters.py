@@ -1,21 +1,22 @@
 s = "OUZODYXAZV"
 t = "XYZ"
 lst = [ j for j in t]
-print(lst)
-output = ''
-final = []
-count = len(lst)
-for i in s:
-    print(f'char {i}')
-    print(count)
-    if i in lst:
-        output = output + i
-        count -= 1
-        if count  == 0:
-            final.append(output)
-            output = ''
-            count = len(lst)
-    elif count < len(lst):
-        output = output + i
+l = 0
+r = len(s) - 1
+while s[l] not in lst:
+    l += 1
+    
+while s[r] not in lst:
+    r -= 1
+count = len(t)   
+for l in range(l,r,1):
+    while count != 0:
+        output = output + s[l]
+        if s[l] in lst:
+            count -= 1
+            
         
-print(output)
+
+
+    
+        
